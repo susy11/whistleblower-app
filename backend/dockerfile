@@ -1,0 +1,12 @@
+FROM node:14.16-alpine
+
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+RUN npm install -g nodemon
+RUN npm install bcrypt@latest --save
+
+COPY . .
+
+EXPOSE 3001
+CMD [ "npm", "start" ]
